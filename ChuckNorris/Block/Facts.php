@@ -23,8 +23,16 @@
 
 namespace PixieMedia\ChuckNorris\Block;
 
+use \PixieMedia\ChuckNorris\Model\ResourceModel\Facts\CollectionFactory;
+
 class Facts extends \Magento\Framework\View\Element\Template
 {
+    /**
+     * Facts Collections.
+     *
+     * @var \PixieMedia\ChuckNorris\Model\ResourceModel\Facts\Collection;
+     */
+    private $collection;
 
     /**
      * Constructor
@@ -34,8 +42,10 @@ class Facts extends \Magento\Framework\View\Element\Template
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
+        CollectionFactory $collectionFactory,
         array $data = []
     ) {
+        $this->collection = $collectionFactory->create();
         parent::__construct($context, $data);
     }
 
@@ -43,9 +53,11 @@ class Facts extends \Magento\Framework\View\Element\Template
      * @return string
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function displayFacts()
+    public function getRandomFacts()
     {
-        //Your block code
-        return __('Hello Developer! This how to get the storename: %1 and this is the way to build a url: %2', $this->_storeManager->getStore()->getName(), $this->getUrl('contacts'));
+        return $this->collection
+            ->setOrder('RAND()')
+            ->setPageSize(1)
+            ->getItems();
     }
 }

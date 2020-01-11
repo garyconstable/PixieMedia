@@ -3,7 +3,25 @@
  * @var $block \PixieMedia\ChuckNorris\Block\Facts
  */
 ?>
-<div>
-	<?= $block->displayFacts() ?>
-	<?= __('Hello PixieMedia_ChuckNorris::facts.phtml') ?>
-</div>
+
+<?php
+$facts = $block->getRandomFacts();
+if(!empty($facts)) {
+
+    echo '
+    <div class="block block-compare block-chuck-norris-fact"">
+        <div class="block-title">
+            <strong role="heading" aria-level="2">Chuck Norris Fact</strong>
+        </div>
+    ';
+
+    foreach ($facts as $fact) {
+        echo '
+            <div class="block-content">
+                <div>'.$fact['fact'].'</div>
+            </div>
+        ';
+    }
+
+    echo '</div>';
+}
