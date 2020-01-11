@@ -1,1 +1,53 @@
-Hello index/index.phtml
+<script type="text/javascript">
+    require(['jquery','Vue'],function($, Vue){
+    const vue = new Vue({
+        el: '#chuckNorris_index',
+        data: {
+            facts: {}
+        },
+        created(){
+            this.getFacts();
+        },
+
+        methods:{
+            getFacts(){
+                let _this = this;
+                $.getJSON( "/rest/V1/pixiemedia-chucknorris/facts", function( data ) {
+                    _this.facts = data;
+                });
+            }
+        }
+    });
+});
+</script>
+
+<section id="chuckNorris_index" v-cloak>
+    <h1>Chuck Norris, Beard Facts</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <div class="norris_facts" v-if="facts.length > 0" v-cloak>
+        <ul>
+            <li v-for="item in facts">
+                <div class="a">
+                    <a v-bind:href=item.url>
+                        <img v-bind:src=item.icon_url />
+                        <small class="break-all">{{ item.fact_id }}</small>
+                        <p>
+                            <small>
+                                <strong>Last Updated:</strong> {{ item.updated_at }}
+                            </small>
+                        </p>
+                    </a>
+                </div>
+                <div class="b">
+                    <a v-bind:href=item.url>
+                        <h3>{{ item.fact }}</h3>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+.break-all{
+    word-break: break-all;
+}
+
+v-cloak{
+    display: none;
+}
+
+#chuckNorris_index{
+}
+
+#chuckNorris_index .norris_facts{
+    margin-top: 30px;
+}
+
+#chuckNorris_index ul{
+    padding: 0;
+}
+
+#chuckNorris_index li{
+    border-top: solid 1px #c5c3c3;
+    clear: left;
+    margin: 0;
+    padding: 20px 0 20px 0;
+    display: inline-block;
+    width:100%;
+    position: relative;
+}
+
+#chuckNorris_index li a{
+    color: #333;
+    text-decoration: none;
+}
+
+#chuckNorris_index li img{
+    display:block;
+    margin-bottom: 5px;
+}
+
+@media(min-width: 768px){
+    #chuckNorris_index li div{
+        float: left;
+    }
+
+    #chuckNorris_index li div.a{
+        width: 20%;
+        margin-right: 2%;
+    }
+
+    #chuckNorris_index li div.b{
+        width:78%;
+    }
+
+    #chuckNorris_index li h3{
+        margin-top: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
