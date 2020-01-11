@@ -1,0 +1,26 @@
+{
+    "name": "pixiemedia/module-chucknorris",
+    "description": "Display Chuck Norris facts on your store.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "garyconstable80@gmail.com",
+            "name": "Gary Constable"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PixieMedia\\ChuckNorris\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

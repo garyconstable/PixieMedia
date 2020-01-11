@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="PixieMedia_ChuckNorris::Facts" sortOrder="10" title="Facts">
+					<resource id="PixieMedia_ChuckNorris::Facts_save" sortOrder="10" title="Save Facts"/>
+					<resource id="PixieMedia_ChuckNorris::Facts_delete" sortOrder="20" title="Delete Facts"/>
+					<resource id="PixieMedia_ChuckNorris::Facts_update" sortOrder="30" title="Update Facts"/>
+					<resource id="PixieMedia_ChuckNorris::Facts_view" sortOrder="40" title="View Facts"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

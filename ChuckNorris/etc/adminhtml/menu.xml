@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="PixieMedia::top_level" module="PixieMedia_ChuckNorris" resource="Magento_Backend::content" sortOrder="9999" title="PixieMedia"/>
+		<add action="pixiemedia_chucknorris/facts/index" id="PixieMedia_ChuckNorris::pixiemedia_chucknorris_facts" module="PixieMedia_ChuckNorris" parent="PixieMedia::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Facts"/>
+	</menu>
+</config>
