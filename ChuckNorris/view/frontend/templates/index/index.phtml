@@ -44,7 +44,7 @@
                 </div>
                 <div class="b">
                     <a v-bind:href=item.url>
-                        <h3>{{ item.fact }}</h3>
+                        <h3 v-html=item.fact />
                     </a>
                 </div>
             </li>

@@ -38,23 +38,31 @@
 	</dataSource>
 	<fieldset name="general">
 		<settings>
-			<label>General</label>
+			<label>Chuck Norris Fact</label>
 		</settings>
-		<field formElement="textarea" name="fact" sortOrder="10">
+		<field name="fact" sortOrder="10" template="ui/form/field">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="source" xsi:type="string">Facts</item>
+					<item name="wysiwygConfigData" xsi:type="array">
+						<item name="height" xsi:type="string">100px</item>
+						<item name="add_variables" xsi:type="boolean">false</item>
+						<item name="add_widgets" xsi:type="boolean">false</item>
+						<item name="add_images" xsi:type="boolean">false</item>
+						<item name="add_directives" xsi:type="boolean">false</item>
+					</item>
+					<item name="label" xsi:type="string"/>
+					<item name="formElement" xsi:type="string">wysiwyg</item>
+					<item name="source" xsi:type="string">block</item>
+					<item name="wysiwyg" xsi:type="boolean">true</item>
+					<item name="dataScope" xsi:type="string">fact</item>
+					<item name="additionalClasses" xsi:type="string"></item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
 				</item>
 			</argument>
-			<settings>
-				<dataType>text</dataType>
-				<label translate="true">fact</label>
-				<dataScope>fact</dataScope>
-				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
-				</validation>
-			</settings>
 		</field>
+
 		<field formElement="input" name="url" sortOrder="20">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
@@ -63,7 +71,7 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">url</label>
+				<label translate="true">Url</label>
 				<dataScope>url</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
@@ -78,42 +86,44 @@
 			</argument>
 			<settings>
 				<dataType>text</dataType>
-				<label translate="true">icon_url</label>
+				<label translate="true">Icon url</label>
 				<dataScope>icon_url</dataScope>
 				<validation>
 					<rule name="required-entry" xsi:type="boolean">false</rule>
 				</validation>
 			</settings>
 		</field>
-		<field formElement="input" name="created_at" sortOrder="50">
+		<field name="created_at" sortOrder="50">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="source" xsi:type="string">Facts</item>
+					<item name="dataType" xsi:type="string">string</item>
+					<item name="label" xsi:type="string" translate="true">Created at</item>
+					<item name="formElement" xsi:type="string">date</item>
+					<item name="source" xsi:type="string">Template</item>
+					<item name="dataScope" xsi:type="string">created_at</item>
+					<item name="options" xsi:type="array">
+						<item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+						<item name="timeFormat" xsi:type="string">HH:mm</item>
+						<item name="showsTime" xsi:type="boolean">true</item>
+					</item>
 				</item>
 			</argument>
-			<settings>
-				<dataType>text</dataType>
-				<label translate="true">created_at</label>
-				<dataScope>created_at</dataScope>
-				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
-				</validation>
-			</settings>
 		</field>
-		<field formElement="input" name="updated_at" sortOrder="60">
+		<field name="updated_at" sortOrder="60">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
-					<item name="source" xsi:type="string">Facts</item>
+					<item name="dataType" xsi:type="string">string</item>
+					<item name="label" xsi:type="string" translate="true">Updated at</item>
+					<item name="formElement" xsi:type="string">date</item>
+					<item name="source" xsi:type="string">Template</item>
+					<item name="dataScope" xsi:type="string">updated_at</item>
+					<item name="options" xsi:type="array">
+						<item name="dateFormat" xsi:type="string">yyyy-MM-dd</item>
+						<item name="timeFormat" xsi:type="string">HH:mm</item>
+						<item name="showsTime" xsi:type="boolean">true</item>
+					</item>
 				</item>
 			</argument>
-			<settings>
-				<dataType>text</dataType>
-				<label translate="true">updated_at</label>
-				<dataScope>updated_at</dataScope>
-				<validation>
-					<rule name="required-entry" xsi:type="boolean">false</rule>
-				</validation>
-			</settings>
 		</field>
 	</fieldset>
 </form>
