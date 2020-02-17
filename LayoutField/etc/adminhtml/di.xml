@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Page Save plugin -->
+    <type name="Magento\Cms\Controller\Adminhtml\Page\Save">
+        <plugin
+            disabled="false"
+            name="PixieMedia_LayoutField_Plugin_Backend_Magento_Cms_Controller_Adminhtml_Page_Save"
+            sortOrder="10"
+            type="PixieMedia\LayoutField\Plugin\Backend\Magento\Cms\Controller\Adminhtml\Page\Save"
+        />
+    </type>
+</config>
