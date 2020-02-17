@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <!--
+    <menu>
+        <add id="PixieMedia_Elucid::top_level" module="PixieMedia_Elucid" resource="Magento_Backend::content" sortOrder="9999" title="Elucid Control" parent="PixieMedia_Core::index"/>
+        <add action="pixiemedia_elucid/order/index" id="PixieMedia_elucid::pixiemedia_elucid_order" module="PixieMedia_Elucid" parent="PixieMedia_Elucid::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Orders"/>
+    </menu>
+    -->
+    <menu>
+        <add id="PixieMedia::top_level" module="PixieMedia_Elucid" resource="Magento_Backend::content" sortOrder="9999" title="PixieMedia"/>
+        <add action="pixiemedia_elucid/order/index" id="PixieMedia_Elucid::pixiemedia_elucid_order" module="PixieMedia_Elucid" parent="PixieMedia::top_level" resource="Magento_Backend::content" sortOrder="9999" title="order"/>
+    </menu>
+</config>
+

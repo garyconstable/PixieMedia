@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="PixieMedia_Elucid::order" sortOrder="10" title="order">
+					<resource id="PixieMedia_Elucid::order_save" sortOrder="10" title="Save order"/>
+					<resource id="PixieMedia_Elucid::order_delete" sortOrder="20" title="Delete order"/>
+					<resource id="PixieMedia_Elucid::order_update" sortOrder="30" title="Update order"/>
+					<resource id="PixieMedia_Elucid::order_view" sortOrder="40" title="View order"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

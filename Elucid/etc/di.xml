@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="PixieMedia\Elucid\Api\OrderRepositoryInterface" type="PixieMedia\Elucid\Model\OrderRepository"/>
+	<preference for="PixieMedia\Elucid\Api\Data\OrderInterface" type="PixieMedia\Elucid\Model\Data\Order"/>
+	<preference for="PixieMedia\Elucid\Api\Data\OrderSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="PixieMedia\Elucid\Model\ResourceModel\Order\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">pixiemedia_elucid_order</argument>
+			<argument name="resourceModel" xsi:type="string">PixieMedia\Elucid\Model\ResourceModel\Order\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="pixiemedia_elucid_order_listing_data_source" xsi:type="string">PixieMedia\Elucid\Model\ResourceModel\Order\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

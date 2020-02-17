@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pixiemedia" translate="label" sortOrder="999">
+            <label>Pixie Media</label>
+        </tab>
+        <section id="pixieelucid" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Elucid Control Settings</label>
+            <tab>pixiemedia</tab>
+            <resource>PixieMedia_General::general_config</resource>
+            <group id="elucid_misc" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Sales Options</label>
+
+                <field id="disable_elucid" translate="label" type="select"  sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable Elucid Integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="order_path" translate="label" type="text"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sales order path</label>
+                    <comment>Sales order path</comment>
+                </field>
+
+                <!--
+                <field id="wsdl" translate="label" type="text"  sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Elucid WSDL address</label>
+                    <comment>Full path for the WSDL</comment>
+                </field>
+                -->
+
+                <!--
+                <field id="kclass" translate="label" type="select"
+                       sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Elucid Company Class</label>
+                    <comment>Default Elucid Company Class for new customers</comment>
+                    <source_model>PixieMedia\Elucid\Ui\Component\Kclass</source_model>
+                </field>
+                -->
+
+                <!--
+                <field id="alias_staging" translate="label" type="text"  sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>The sales_source Value for 'staging'</label>
+                    <comment>Sales orders with issues, or 'other' set for the 'where did you hear about us' field will have this set for their sales_source attribute</comment>
+                </field>
+                -->
+
+                <!--
+                <field id="alias_picking" translate="label" type="text"  sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>The sales_source Value for 'picking'</label>
+                    <comment>Sales orders which need no human intervention will have this set for their sales_source attribute</comment>
+                </field>
+                -->
+
+                <!--
+                <field id="subscribe_email" translate="label" type="text"  sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>The email address for the daily subscribe csv email</label>
+
+                </field>
+                -->
+            </group>
+        </section>
+    </system>
+</config>
+
